@@ -1,26 +1,21 @@
+const int startButtonPin = 2;  // il pulsante è connesso al pin 2
+const int ledPin = 12;    // Il led di rilevazione pressione collegato al pin 12
 
-
-// constants won't change. They're used here to set pin numbers:
-const int startButtonPin = 2;  // the number of the pushbutton pin
-const int ledPin = 12;    // the number of the LED pin
-
-// variables will change:
-int start = 0;  // variable for reading the pushbutton status
+// per memorizzare lo stato del pulsante
+int start = 0; 
 
 void setup() {
-  // initialize the LED pin as an output:
   pinMode(ledPin, OUTPUT);
-  // initialize the pushbutton pin as an input:
   pinMode(startButtonPin, INPUT);
 }
 
 void loop() {
   
-  
+  //lo start viene tenuto a zero dalla resistenza di pull-down del pulsante
   while(!start)
   start = digitalRead(startButtonPin);
 
- 
+  // se viene premuto il pulsante start diventa "true" e quindi non ripeto mai più la lettura del piedino
     
     digitalWrite(ledPin, HIGH);
     delay(2000);
