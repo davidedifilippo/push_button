@@ -1,3 +1,6 @@
+//Il push button deve essere connesso con un resistore di pull down a massa
+          
+
 const int startButtonPin = 2;  // il pulsante è connesso al pin 2
 const int ledPin = 12;    // Il led di rilevazione pressione collegato al pin 12
 
